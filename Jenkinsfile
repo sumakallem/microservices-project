@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'DockerCredentials') {
-                        sh 'docker build -t sumakallem/checkoutservice_shop:latest .'
+                        sh "docker build -t sumakallem/checkoutservice_shop:latest ."
                     }
                 }
             }
@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script{
                     withDockerRegistry(credentialsId: 'DockerCredentials') {
-                        sh 'docker push sumakallem/checkoutservice_shop:latest'
+                        sh "docker push sumakallem/checkoutservice_shop:latest"
                     }
                 }
             }
